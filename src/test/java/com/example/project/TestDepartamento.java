@@ -109,6 +109,5 @@ public class TestDepartamento {
         Departamento siglaIdadeVazia = new Departamento(NOME_DEPARTAMENTO, "", LOCALIZACAO,
                                             new Coordenador(NOME_COORDENADOR, 0, CPF));                
         rodarTestarRetorno(TEXTO_ESPERADO_SEM_SIGLA_SEM_IDADE, siglaIdadeVazia);
-    }
-    
+    }    
 }
