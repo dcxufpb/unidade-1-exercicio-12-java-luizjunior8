@@ -34,12 +34,14 @@ public class TestDepartamento {
     private String TEXTO_ESPERADO_DEPARTAMENTO_COMPLETO = "Depto. test." + BREAK + "D1" + BREAK
             + "Local 1" + BREAK + "Coord. 1" + BREAK + "40 anos" + BREAK + "CPF: 111.222.333-44" + BREAK;
 
+    @Test    
     public void departamentoCompleto() {
         Departamento departamentoCompleto = new Departamento(NOME_DEPARTAMENTO, SIGLA, LOCALIZACAO,
                                             new Coordenador(NOME_COORDENADOR, IDADE, CPF));                
         rodarTestarRetorno(TEXTO_ESPERADO_DEPARTAMENTO_COMPLETO, departamentoCompleto);
     }
 
+    @Test
     public void NomeDepartamentoVazio() {
         Departamento nomeDepartamentoVazio = new Departamento("", SIGLA, LOCALIZACAO,
                                             new Coordenador(NOME_COORDENADOR, IDADE, CPF));
@@ -52,7 +54,8 @@ public class TestDepartamento {
     
     private String TEXTO_ESPERADO_SEM_SIGLA = "Depto. test." + BREAK + "" + BREAK
             + "Local 1" + BREAK + "Coord. 1" + BREAK + "40 anos" + BREAK + "CPF: 111.222.333-44" + BREAK;
-            
+    
+    @Test
     public void semSigla() {
         Departamento siglaVazia = new Departamento(NOME_DEPARTAMENTO, "", LOCALIZACAO,
                                             new Coordenador(NOME_COORDENADOR, IDADE, CPF));                
@@ -63,6 +66,7 @@ public class TestDepartamento {
         rodarTestarRetorno(TEXTO_ESPERADO_SEM_SIGLA, siglaNula);
     }
 
+    @Test
     public void localDepartamentoVazio() {
         Departamento localDepartamentoVazio = new Departamento(NOME_DEPARTAMENTO, SIGLA, "",
                                             new Coordenador(NOME_COORDENADOR, IDADE, CPF));
@@ -73,6 +77,7 @@ public class TestDepartamento {
 		verificarCampoObrigatorio("A localização do departamento é obrigatória", localDepartamentoNulo);
     }
 
+    @Test
     public void nomeCoordenadorVazio() {
         Departamento nomeCoordenadorVazio = new Departamento(NOME_DEPARTAMENTO, SIGLA, LOCALIZACAO,
                                             new Coordenador("", IDADE, CPF));
@@ -85,13 +90,15 @@ public class TestDepartamento {
 
     private String TEXTO_ESPERADO_SEM_IDADE = "Depto. test." + BREAK + SIGLA + BREAK
             + "Local 1" + BREAK + "Coord. 1" + BREAK + "CPF: 111.222.333-44" + BREAK;
-            
+      
+    @Test
     public void semIdade() {
         Departamento idadeVazia = new Departamento(NOME_DEPARTAMENTO, SIGLA, LOCALIZACAO, 
                                     new Coordenador(NOME_COORDENADOR, 0, CPF));                
         rodarTestarRetorno(TEXTO_ESPERADO_SEM_IDADE, idadeVazia);
     }
 
+    @Test
     public void cpfCoordenadorVazio() {
         Departamento cpfCoordenadorVazio = new Departamento(NOME_DEPARTAMENTO, SIGLA, LOCALIZACAO,
                                             new Coordenador(NOME_COORDENADOR, IDADE, ""));
@@ -104,7 +111,8 @@ public class TestDepartamento {
 
     private String TEXTO_ESPERADO_SEM_SIGLA_SEM_IDADE = "Depto. test." + BREAK + "" + BREAK
             + "Local 1" + BREAK + "Coord. 1" + BREAK + "CPF: 111.222.333-44" + BREAK;
-            
+        
+    @Test
     public void semSiglaSemIdade() {
         Departamento siglaIdadeVazia = new Departamento(NOME_DEPARTAMENTO, "", LOCALIZACAO,
                                             new Coordenador(NOME_COORDENADOR, 0, CPF));                

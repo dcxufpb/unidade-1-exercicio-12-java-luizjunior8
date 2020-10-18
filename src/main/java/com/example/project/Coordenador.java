@@ -63,12 +63,12 @@ public class Coordenador {
 
         validar_dados_obrigatorios();
 
-        String idadeCoord = this.getIdade() == 0? "" : this.getIdade() + " anos";
+        String idadeCoord = this.getIdade() == 0? "" : this.getIdade() + " anos" + Spacer;
 
         String cpfCoord = "CPF: " + this.getCpf();
 
         return (this.getNomeCoordenador() + Spacer +
-        idadeCoord + Spacer +
+        idadeCoord + 
         cpfCoord);
     }
 }
